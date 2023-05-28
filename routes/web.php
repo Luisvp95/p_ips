@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\IpController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::middleware(['auth', 'verified'])->get('/admin', function () {
+    return view('admin.index');
+    
+});
+Route::group(['middleware'=> ['auth']], function(){
+    Route::resource('areas', AreaController::class);
+    Route::resource('ips', IpController::class);
+    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('roles', RoleController::class);
+
+    });
