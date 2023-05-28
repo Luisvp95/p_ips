@@ -9,14 +9,14 @@ use Spatie\Permission\Models\Permission;
 
 class AreaController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:ver-area|:detalle-area|crear-area|editar-area|borrar-area', ['only' => ['index']]);
-        $this->middleware('permission:detalle-area', ['only' => ['show']]);
-        $this->middleware('permission:crear-area', ['only' => ['create', 'store']]);
-        $this->middleware('permission:editar-area', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:borrar-area', ['only' => ['destroy']]);
-    }
+    // function __construct()
+    // {
+    //     $this->middleware('permission:ver-area|:detalle-area|crear-area|editar-area|borrar-area', ['only' => ['index']]);
+    //     $this->middleware('permission:detalle-area', ['only' => ['show']]);
+    //     $this->middleware('permission:crear-area', ['only' => ['create', 'store']]);
+    //     $this->middleware('permission:editar-area', ['only' => ['edit', 'update']]);
+    //     $this->middleware('permission:borrar-area', ['only' => ['destroy']]);
+    // }
     public function index()
     {
         $areas = Area::paginate();
