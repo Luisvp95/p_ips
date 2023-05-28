@@ -33,7 +33,17 @@ Route::middleware(['auth', 'verified'])->get('/admin', function () {
 Route::group(['middleware'=> ['auth']], function(){
     Route::resource('areas', AreaController::class);
     Route::resource('ips', IpController::class);
-    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('usuarios', UsuarioController::class)->names('users');
     Route::resource('roles', RoleController::class);
 
     });
+
+
+    // Route::group(['middleware'=>['auth']],function(){
+
+    //     Route::resource('usuarios', 'UsuarioController')->names('users');
+    //     Route::resource('roles', 'RoleController')->names('roles');
+    //     Route::resource('areas', 'AreaController')->names('areas');
+    //     Route::resource('ips    ', 'IpController')->names('ip');
+    //     });
+        

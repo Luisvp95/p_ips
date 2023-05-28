@@ -283,22 +283,13 @@ class RoleController extends Controller
         //     ->get();
         $userPermission = $this->getPermissionsByType('usuario');
         $rolPermission = $this->getPermissionsByType('rol');
-        $categoryPermission = $this->getPermissionsByType('categoria');
-        $personPermission = $this->getPermissionsByType('persona');
-        $cursePermission = $this->getPermissionsByType('curso');
-        $autorPermission = $this->getPermissionsByType('autor');
-        $libroPermission = $this->getPermissionsByType('libro');
-        $prestamoPermission = $this->getPermissionsByType('prestamo');
-        $salePermission = $this->getPermissionsByType('venta');
-        $reportPermission = $this->getPermissionsByType('dia');
-        $report1Permission = $this->getPermissionsByType('fecha');
-        $contenidoPermission = $this->getPermissionsByType('contenido');
-        $horarioPermission = $this->getPermissionsByType('horario');
+        $areaPermission = $this->getPermissionsByType('area');
+        $ipPermission = $this->getPermissionsByType('ip');
 
         // Obtener los permisos del rol que se va a editar
         $assignedPermissions = $role->permissions->pluck('id')->toArray();
 
-        return view('role.edit', compact('role', 'userPermission', 'rolPermission', 'categoryPermission', 'personPermission', 'cursePermission', 'autorPermission', 'libroPermission', 'prestamoPermission', 'salePermission', 'reportPermission', 'report1Permission', 'contenidoPermission', 'horarioPermission', 'assignedPermissions', 'visitas'));
+        return view('role.edit', compact('role', 'userPermission', 'rolPermission', 'areaPermission', 'ipPermission','assignedPermissions'));
     }
 
     public function update(UpdateRequest $request, Role $role)

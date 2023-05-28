@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Roles')
 
 @section('content_header')
-    <h1>Roles</h1>
+    <h1>Lista de Roles</h1>
 @stop
 
 @section('content')
@@ -15,11 +15,11 @@
                     <div style="display: flex; justify-content: space-between; align-items: center;">
 
                         <span id="card_title">
-                            {{ __('Ip') }}
+                            {{ __('Roles') }}
                         </span>
 
                          <div class="float-right">
-                            <a href="{{ route('ips.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                            <a href="{{ route('roles.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                               {{ __('Nuevo') }}
                             </a>
                           </div>
@@ -38,9 +38,9 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    @canany(['detalle-rol', 'editar-rol', 'borrar-rol'])
+                                    {{-- @canany(['detalle-rol', 'editar-rol', 'borrar-rol']) --}}
                                     <th>Acciones</th>
-                                    @endcanany
+                                    {{-- @endcanany --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,7 +51,7 @@
                                             <a href="{{ route('roles.show', $role) }}">
                                                 {{ $role->name }}</a>
                                         </td>
-                                        @canany(['detalle-rol', 'editar-rol', 'borrar-rol'])
+                                        {{-- @canany(['detalle-rol', 'editar-rol', 'borrar-rol']) --}}
                                         <td>
                                             {!! Form::open(['route' => ['roles.destroy', $role], 'method' => 'DELETE', 'id' => 'delete-form']) !!}
                                             <div class="btn-group" role="group">
@@ -61,23 +61,23 @@
                                                         <i class="far fa-eye small"></i> Detalles
                                                     </a>
                                                 @endcan --}}
-                                                @can('editar-rol')
+                                                {{-- @can('editar-rol') --}}
                                                     <a href="{{ route('roles.edit', $role) }}" type="button"
                                                         class="btn btn-success btn-sm ml-2 rounded" title="Editar">
                                                         <i class="far fa-edit small"></i> Editar
                                                     </a>
-                                                @endcan
-                                                @can('borrar-rol')
+                                                {{-- @endcan --}}
+                                                {{-- @can('borrar-rol') --}}
                                                     <button class="btn btn-danger btn-sm ml-2 rounded" type="button"
                                                         onclick="deleteConfirm('¿Está seguro de que desea eliminar este rol?',{{ $role->id }})">
                                                         <i class="fas fa-trash-alt small"></i> Eliminar
                                                     </button>
-                                                @endcan
+                                                {{-- @endcan --}}
                     
                                             </div>
                                             {!! Form::close() !!}
                                         </td>
-                                        @endcanany
+                                        {{-- @endcanany --}}
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -85,7 +85,6 @@
                     </div>
                 </div>
             </div>
-            {!! $ips->links() !!}
         </div>
     </div>
 </div>

@@ -44,8 +44,8 @@
     </div>
     <div class="col-md-3">
         <div class="form-group checkbox-grid">
-            <h3 class="h5 mb-4">Permisos de persona</h3>
-            @foreach ($personPermission as $id => $name)
+            <h3 class="h5 mb-4">Permisos de Ip</h3>
+            @foreach ($areaPermission as $id => $name)
                 <label> {{ Form::checkbox('permission[]', $id, false, ['class' => 'name']) }}
                     {{ Form::label($name, $name, ['class' => 'form-check-label']) }}</label> <br>
             @endforeach
@@ -53,15 +53,15 @@
     </div>
     <div class="col-md-3">
         <div class="form-group checkbox-grid">
-            <h3 class="h5 mb-4">Permisos de categoria</h3>
-            @foreach ($categoryPermission as $id => $name)
+            <h3 class="h5 mb-4">Permisos de Area</h3>
+            @foreach ($areaPermission as $id => $name)
                 <label> {{ Form::checkbox('permission[]', $id, false, ['class' => 'name']) }}
                     {{ Form::label($name, $name, ['class' => 'form-check-label']) }}</label> <br>
             @endforeach
         </div>
     </div>
     
-    <div class="col-md-3">
+    {{-- <div class="col-md-3">
         <div class="form-group checkbox-grid">
             <h3 class="h5 mb-4">Permisos de curso</h3>
             @foreach ($cursePermission as $id => $name)
@@ -124,8 +124,8 @@
             @endforeach
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="form-group checkbox-grid">
+    <div class="col-md-3"> --}}
+        {{-- <div class="form-group checkbox-grid">
             <h3 class="h5 mb-4">Permisos de reporte</h3>
             @foreach ($reportPermission as $id => $name)
                 <label> {{ Form::checkbox('permission[]', $id, false, ['class' => 'name']) }}
@@ -134,7 +134,7 @@
             @foreach ($report1Permission as $id => $name)
     <label>{{ Form::checkbox('permission[]', $id, false, ['class' => 'name']) }}
         {{ Form::label($name, $name, ['class' => 'form-check-label']) }}</label> <br>
-@endforeach
+@endforeach --}}
         </div>
     </div>
     

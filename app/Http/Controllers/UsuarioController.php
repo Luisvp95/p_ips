@@ -27,15 +27,15 @@ class UsuarioController extends Controller
     public function index()
     {
         $users = User::get();
-        $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios')->get();
-        return view('admin.user.index', compact('users', 'visitas'));
+        // $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios')->get();
+        return view('user.index', compact('users'));
     }
 
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios/create')->get();
-        return view('admin.user.create', compact('roles', 'visitas'));
+        // $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios/create')->get();
+        return view('user.create', compact('roles'));
     }
 
     public function store(StoreRequest $request)
@@ -53,8 +53,8 @@ class UsuarioController extends Controller
     public function show(User $user)
     {
         $id=$user->id;
-        $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios/'.$id)->get();
-        return view('admin.user.show', compact('user', 'visitas'));
+        // $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios/'.$id)->get();
+        return view('user.show', compact('user'));
     }
 
     public function edit($id)
@@ -68,8 +68,8 @@ class UsuarioController extends Controller
         } else {
             $userRole = [];
         }
-        $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios/'.$id.'/edit')->get();
-        return view('admin.user.edit', compact('user', 'roles', 'userRole', 'visitas'));
+        // $visitas = DB::table('visitas')->where('ruta', '=', '/usuarios/'.$id.'/edit')->get();
+        return view('user.edit', compact('user', 'roles', 'userRole', 'visitas'));
     }
 
     public function update(UpdateRequest $request, $id)

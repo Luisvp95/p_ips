@@ -306,11 +306,6 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
 
         [
             'text'        => 'Areas',
@@ -318,6 +313,8 @@ return [
             'icon'        => 'fab fa-font-awesome',
             'label'       => 1,
             'label_color' => 'success',
+            'can'         => 'ver-area',
+
         ],
         [
             'text'        => 'Ips',
@@ -325,17 +322,20 @@ return [
             'icon'        => 'fas fa-network-wired',
             'label'       => 2,
             'label_color' => 'success',
+            'can'         => 'ver-ip',
         ],
-        ['header' => 'Configuracion de cuenta'],
+        ['header' => 'Configuracion'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Usuarios',
+            'url'  => 'usuarios',
             'icon' => 'fas fa-fw fa-user',
+            'can'  => 'ver-usuario',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Roles',
+            'url'  => 'roles',
             'icon' => 'fas fa-fw fa-lock',
+            'can'  => 'ver-rol',
         ],
         // [
         //     'text'    => 'multilevel',

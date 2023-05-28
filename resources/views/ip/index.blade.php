@@ -3,7 +3,7 @@
 @section('title', 'Ips')
 
 @section('content_header')
-    <h1>Lista de Ip</h1>
+    <h1>Lista de roles</h1>
 @stop
 
 @section('content')

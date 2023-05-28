@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Ip')
+@section('title', 'Editar Rol')
 
 @section('content_header')
-    <h1>Editar Ip</h1>
+    <h1>Editar Rol</h1>
 @stop
 
 @section('content')
@@ -57,8 +57,8 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group checkbox-grid">
-                            <h3 class="h5 mb-4">Permisos de persona</h3>
-                            @foreach ($personPermission as $id => $name)
+                            <h3 class="h5 mb-4">Permisos de Ip</h3>
+                            @foreach ($ipPermission as $id => $name)
                                 <label>
                                     {{ Form::checkbox('permission[]', $id, in_array($id, $assignedPermissions), ['class' => 'name']) }}
                                     {{ Form::label($name, $name, ['class' => 'form-check-label']) }}</label> <br>
@@ -67,8 +67,8 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group checkbox-grid">
-                            <h3 class="h5 mb-4">Permisos de categoria</h3>
-                            @foreach ($categoryPermission as $id => $name)
+                            <h3 class="h5 mb-4">Permisos de Area</h3>
+                            @foreach ($areaPermission as $id => $name)
                                 <label>
                                     {{ Form::checkbox('permission[]', $id, in_array($id, $assignedPermissions), ['class' => 'name']) }}
                                     {{ Form::label($name, $name, ['class' => 'form-check-label']) }}</label> <br>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="form-group checkbox-grid">
                             <h3 class="h5 mb-4">Permisos de curso</h3>
                             @foreach ($cursePermission as $id => $name)
@@ -161,7 +161,7 @@
                                     {{ Form::label($name, $name, ['class' => 'form-check-label']) }}</label> <br>
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <button type="submit" class="btn btn-primary mr-2">Actualizar</button>

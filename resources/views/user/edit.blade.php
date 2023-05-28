@@ -1,33 +1,14 @@
-@extends('layouts.admin')
-@section('title', 'Editar usuario')
-@section('styles')
-@endsection
-{{-- @section('create')
-<li class="nav-item d-none d-lg-flex">
-    <a class="nav-link" href="{{route('users.create')}}">
-        <span class="btn btn-primary">+Crear nuevo</span>
-    </a>
-</li>
-@endsection --}}
-@section('options')
-@endsection
-@section('preference')
-@endsection
+@extends('adminlte::page')
+
+@section('title', 'Editar Usuario')
+
+@section('content_header')
+    <h1>Editar Usuario</h1>
+@stop
+
 @section('content')
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title">
-                Editar usuario
-            </h3>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="">Panel de administrador</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Usuarios</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Editar usuario</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="row">
+<section class="content container-fluid">
+    <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body content-bg">
@@ -85,11 +66,17 @@
                 </div>
             </div>
         </div>
-        @foreach ($visitas as $visita)
-            <p>Visitas: {{ $visita->contador }}</p>
-        @endforeach
-    </div>
-@endsection
+</section>
+@stop
 
-@section('scripts')
-@endsection
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+    {!! Html::style('select/dist/css/bootstrap-select.min.css') !!}
+
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+    {!! Html::script('select/dist/js/bootstrap-select.min.js') !!}
+
+@stop
